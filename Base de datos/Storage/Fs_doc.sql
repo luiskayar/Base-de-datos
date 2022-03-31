@@ -1,0 +1,3 @@
+﻿ALTER DATABASE [$(DatabaseName)]
+    ADD FILEGROUP [Fs_doc] CONTAINS FILESTREAM;
+

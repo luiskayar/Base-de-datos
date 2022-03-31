@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>CIIADHEL_BD</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{1212674f-60e0-4a0f-b125-e42244bec2b3}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>Base_de_datos</RootNamespace>
+    <AssemblyName>Base_de_datos</AssemblyName>
+    <ModelCollation>3082,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>Modern_Spanish_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+    <DefaultFileStreamFilegroup>Fs_doc</DefaultFileStreamFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\FileTables\" />
+    <Folder Include="Storage\" />
+    <Folder Include="dbo\Functions\" />
+    <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="Scripts" />
+    <Folder Include="Scripts\Post-Deployment" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\TB_Documentos.sql" />
+    <Build Include="dbo\Tables\TB_Caracteristicas_especializadas_aeropuerto.sql" />
+    <Build Include="dbo\Tables\TB_Pistas.sql" />
+    <Build Include="dbo\Tables\TB_Roles.sql" />
+    <Build Include="dbo\Tables\TB_Contacto.sql" />
+    <Build Include="dbo\Tables\NOTAMS.sql" />
+    <Build Include="dbo\Tables\TB_Frecuencias.sql" />
+    <Build Include="dbo\Tables\TB_Aeropuerto.sql" />
+    <Build Include="dbo\Tables\TB_Usuarios.sql" />
+    <Build Include="dbo\FileTables\PruebaFT.sql" />
+    <Build Include="dbo\FileTables\TB_Propuesta2Doc.sql" />
+    <Build Include="Storage\Fs_doc.sql" />
+    <Build Include="dbo\Functions\DEsEncripta64.sql" />
+    <Build Include="dbo\Functions\fncBase64_Encode.sql" />
+    <Build Include="dbo\Functions\Fu_Encriptacion_Contraseña.sql" />
+    <Build Include="dbo\Functions\FU_Desencriptacion_Contraseña.sql" />
+    <Build Include="dbo\Stored Procedures\SP_ArchivosB_Ingresar.sql" />
+    <Build Include="dbo\Stored Procedures\SP_TB_Documentos_Ver.sql" />
+    <Build Include="dbo\Stored Procedures\SP_TB_Propuesta2_Ver.sql" />
+    <Build Include="dbo\Stored Procedures\SP_Archivos_Ingresar.sql" />
+    <Build Include="dbo\Stored Procedures\SP_Aeropuerto_MostrarRelevantes.sql" />
+    <Build Include="dbo\Stored Procedures\SP_Aeropuerto_Buscador.sql" />
+    <Build Include="dbo\Stored Procedures\SP_Usuario_Inicio_de_sesion.sql" />
+    <Build Include="dbo\Stored Procedures\SP_Aeropuerto_Mostrar_4.sql" />
+    <Build Include="dbo\Stored Procedures\SP_Frecuencia_Mostrar_por_ID.sql" />
+    <Build Include="dbo\Stored Procedures\SP_Notams_Mostrar_por_ID.sql" />
+    <Build Include="dbo\Stored Procedures\SP_Aeropuerto_Mostrar_Cantidad.sql" />
+    <Build Include="dbo\Stored Procedures\SP_Aeropuerto_Mostra_UltimaAcualizacion.sql" />
+    <Build Include="dbo\Stored Procedures\SP_Aeropuerto_Actualizar.sql" />
+    <Build Include="dbo\Stored Procedures\SP_Notams_Actualizar.sql" />
+    <Build Include="dbo\Stored Procedures\SP_Caracteristicas_Actualizar.sql" />
+    <Build Include="dbo\Stored Procedures\SP_Contacto_Actualizar.sql" />
+    <Build Include="dbo\Stored Procedures\SP_Frecuancias_Actualizar.sql" />
+    <Build Include="dbo\Stored Procedures\SP_Pista_Actualizar.sql" />
+    <Build Include="dbo\Stored Procedures\SP_Orquestador.sql" />
+    <Build Include="dbo\Stored Procedures\EJEMPLO.sql" />
+    <None Include="Scripts\Post-Deployment\dbo.NOTAMS.Table.sql" />
+    <None Include="Scripts\Post-Deployment\dbo.PruebaFT.Table.sql" />
+    <None Include="Scripts\Post-Deployment\dbo.TB_Aeropuerto.Table.sql" />
+    <None Include="Scripts\Post-Deployment\dbo.TB_Caracteristicas_especializadas_aeropuerto.Table.sql" />
+    <None Include="Scripts\Post-Deployment\dbo.TB_Contacto.Table.sql" />
+    <None Include="Scripts\Post-Deployment\dbo.TB_Documentos.Table.sql" />
+    <None Include="Scripts\Post-Deployment\dbo.TB_Frecuencias.Table.sql" />
+    <None Include="Scripts\Post-Deployment\dbo.TB_Pistas.Table.sql" />
+    <None Include="Scripts\Post-Deployment\dbo.TB_Propuesta2Doc.Table.sql" />
+    <None Include="Scripts\Post-Deployment\dbo.TB_Roles.Table.sql" />
+    <None Include="Scripts\Post-Deployment\dbo.TB_Usuarios.Table.sql" />
+  </ItemGroup>
+</Project>
